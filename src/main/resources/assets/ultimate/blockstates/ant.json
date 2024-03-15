@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "ultimate:block/ant",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "ultimate:block/ant"
+    },
+    "facing=south": {
+      "model": "ultimate:block/ant",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "ultimate:block/ant",
+      "y": 270
+    }
+  }
+}

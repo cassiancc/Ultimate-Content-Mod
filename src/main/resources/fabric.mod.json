@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "ultimate",
+  "version": "${version}",
+  "name": "Ultimate Content Mod",
+  "description": "The Ultimate Content Mod re-implements additional blocks and items from 20w14infinite.",
+  "authors": [
+    "Cassian Godsted"
+  ],
+  "contact": {
+    "website": "cassian.cc/ultimatecontent",
+    "repo": "https://github.com/cassian/Ultimate-Content-Mod"
+  },
+  "license": "MIT",
+  "icon": "assets/ultimate/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "cc.cassian.ultimate.client.UltimateContentModClient"
+    ],
+    "main": [
+      "cc.cassian.ultimate.UltimateContentMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
