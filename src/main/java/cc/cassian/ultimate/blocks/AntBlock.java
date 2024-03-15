@@ -7,9 +7,6 @@ import net.minecraft.state.StateManager;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
-
-import java.util.Random;
-
 public class AntBlock extends HorizontalFacingBlock {
 
     public AntBlock(Settings settings) {
