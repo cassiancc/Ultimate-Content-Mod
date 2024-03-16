@@ -5,11 +5,14 @@
   "name": "Ultimate Content Mod",
   "description": "The Ultimate Content Mod re-implements additional blocks and items from 20w14infinite.",
   "authors": [
-    "Cassian Godsted"
+    "@cassiancc"
   ],
   "contact": {
-    "website": "cassian.cc/ultimatecontent",
-    "repo": "https://github.com/cassian/Ultimate-Content-Mod"
+    "website": "https://github.com/cassiancc/Ultimate-Content-Mod",
+    "repo": "https://github.com/cassiancc/Ultimate-Content-Mod",
+    "issues": "https://github.com/cassiancc/Ultimate-Content-Mod/issues",
+    "sources": "https://github.com/cassiancc/Ultimate-Content-Mod",
+    "homepage": "https://github.com/cassiancc/Ultimate-Content-Mod"
   },
   "license": "MIT",
   "icon": "assets/ultimate/icon.png",
