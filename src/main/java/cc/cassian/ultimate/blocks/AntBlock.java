@@ -1,9 +1,13 @@
 package cc.cassian.ultimate.blocks;
 
 import net.minecraft.block.*;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
@@ -27,8 +31,15 @@ public class AntBlock extends HorizontalFacingBlock {
 
     }
 
+    @Override
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+      move(state, world, pos, Clockwiseness.CW);
+      return ActionResult.SUCCESS;
+    };
 
-    private void move(BlockState state, World world, BlockPos pos, Clockwiseness clockwiseness) {
+
+
+        private void move(BlockState state, World world, BlockPos pos, Clockwiseness clockwiseness) {
         Direction direction = state.get(FACING);
         Direction direction2 = clockwiseness == Clockwiseness.CW ? direction.rotateYClockwise() : direction.rotateYCounterclockwise();
         BlockPos blockPos = pos.offset(direction2);
