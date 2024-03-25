@@ -27,6 +27,8 @@ public class UltimateContentMod implements ModInitializer {
     public static final Block NETHERITE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK));
     public static final Block CURSOR = new Block(FabricBlockSettings.create().strength(1.8f).mapColor(MapColor.GREEN).sounds(BlockSoundGroup.STONE));
     public static final Block ANT = new AntBlock(FabricBlockSettings.create().strength(-1f, 3600000.0f).mapColor(MapColor.WHITE).sounds(BlockSoundGroup.METAL).dropsNothing());
+    public static final Item FOOTPRINT = new Item(new FabricItemSettings());
+    public static final Item FINE_ITEM = new Item(new FabricItemSettings());
 
 
 
@@ -43,8 +45,8 @@ public class UltimateContentMod implements ModInitializer {
             Registry.register(Registries.ITEM, new Identifier("ultimate", ultimateBlockIDs[i]), new BlockItem(ultimateBlocks[i], new FabricItemSettings()));
         }
 
-        Registry.register(Registries.ITEM, new Identifier("ultimate", "footprint"), new Item(new FabricItemSettings()));
-        Registry.register(Registries.ITEM, new Identifier("ultimate", "fine_item"), new Item(new FabricItemSettings()));
+        Registry.register(Registries.ITEM, new Identifier("ultimate", "footprint"), FOOTPRINT);
+        Registry.register(Registries.ITEM, new Identifier("ultimate", "fine_item"), FINE_ITEM);
 
 
 
@@ -61,6 +63,11 @@ public class UltimateContentMod implements ModInitializer {
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COLORED_BLOCKS).register(content -> {
             content.addAfter(Items.PINK_TERRACOTTA, CURSOR);
+
+        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(content -> {
+            content.addAfter(Items.DISC_FRAGMENT_5, FOOTPRINT, FINE_ITEM);
+
 
         });
     }

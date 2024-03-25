@@ -3,7 +3,11 @@
   "block.ultimate.book_box": "Box of Infinite Books",
   "block.ultimate.cursor": "Cursor",
   "block.ultimate.netherite_stairs": "Swaggiest Stairs Ever",
-  "block.ultimate.netherite_slab": "Swaggiest Slab Ever"
+  "block.ultimate.netherite_slab": "Swaggiest Slab Ever",
+  "item.ultimate.footprint": "Footprint",
+  "item.ultimate.fine_item": "A Very Fine Item"
+
+
 
 
 }
