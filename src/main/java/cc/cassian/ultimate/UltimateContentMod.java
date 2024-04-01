@@ -23,7 +23,7 @@ import net.minecraft.util.Identifier;
 public class UltimateContentMod implements ModInitializer {
 
     public static final Block BOOK_BOX  = new BookBoxBlock(FabricBlockSettings.create().strength(1.5f).sounds(BlockSoundGroup.WOOD).mapColor(MapColor.BROWN));
-    public static final Block NETHERITE_STAIRS = new ModStairs(Blocks.NETHERITE_BLOCK.getDefaultState(),FabricBlockSettings.create().strength(3.0f));
+    public static final Block NETHERITE_STAIRS = new ModStairs(Blocks.NETHERITE_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK).strength(3.0f));
     public static final Block NETHERITE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK));
     public static final Block CURSOR = new Block(FabricBlockSettings.create().strength(1.8f).mapColor(MapColor.GREEN).sounds(BlockSoundGroup.STONE));
     public static final Block ANT = new AntBlock(FabricBlockSettings.create().strength(-1f, 3600000.0f).mapColor(MapColor.WHITE).sounds(BlockSoundGroup.METAL).dropsNothing());
@@ -56,7 +56,6 @@ public class UltimateContentMod implements ModInitializer {
 
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(content -> {
-            content.addAfter(Items.BOOKSHELF, BOOK_BOX);
             content.addAfter(Items.LODESTONE, ANT);
 
 
