@@ -2,13 +2,15 @@ package cc.cassian.ultimate;
 
 import cc.cassian.ultimate.blocks.AntBlock;
 import cc.cassian.ultimate.blocks.BookBoxBlock;
-import cc.cassian.ultimate.blocks.ModFire;
 import cc.cassian.ultimate.blocks.ModStairs;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.MapColor;
+import net.minecraft.block.SlabBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -27,17 +29,16 @@ public class UltimateContentMod implements ModInitializer {
     public static final Block ANT = new AntBlock(FabricBlockSettings.create().strength(-1f, 3600000.0f).mapColor(MapColor.WHITE).sounds(BlockSoundGroup.METAL).dropsNothing());
     public static final Item FOOTPRINT = new Item(new FabricItemSettings());
     public static final Item FINE_ITEM = new Item(new FabricItemSettings());
-    public static final Block FIRE = new ModFire(FabricBlockSettings.create().strength(0.1f).mapColor(MapColor.RED).sounds(BlockSoundGroup.STONE).dropsNothing().noCollision().luminance(15));
 
 
 
     @Override
     public void onInitialize() {
         String[] ultimateBlockIDs = {
-                "book_box", "netherite_stairs", "netherite_slab", "cursor", "ant", "fire"
+                "book_box", "netherite_stairs", "netherite_slab", "cursor", "ant"
         };
         Block[] ultimateBlocks = {
-                BOOK_BOX, NETHERITE_STAIRS, NETHERITE_SLAB, CURSOR, ANT, FIRE
+                BOOK_BOX, NETHERITE_STAIRS, NETHERITE_SLAB, CURSOR, ANT
         };
         for (int i = 0; i < ultimateBlockIDs.length; i++) {
             Registry.register(Registries.BLOCK, new Identifier("ultimate", ultimateBlockIDs[i]), ultimateBlocks[i]);
