@@ -1,5 +1,6 @@
 package cc.cassian.ultimate.blocks;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
@@ -20,6 +21,11 @@ public class AntBlock extends HorizontalFacingBlock {
     }
 
     @Override
+    protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
+        return null;
+    }
+
+    @Override
     public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, net.minecraft.util.math.random.Random random) {
 //        super.scheduledTick(state, world, pos, random);
         BlockState blockState = world.getBlockState(pos.down());
@@ -32,9 +38,9 @@ public class AntBlock extends HorizontalFacingBlock {
     }
 
     @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-      move(state, world, pos, Clockwiseness.CW);
-      return ActionResult.SUCCESS;
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+        move(state, world, pos, Clockwiseness.CW);
+        return ActionResult.SUCCESS;
     };
 
 
